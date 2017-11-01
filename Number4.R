@@ -18,8 +18,8 @@ ggplot(data = dat, aes(x = F_mass)) + # says the data used is dat, and F_mass is
 
 ggplot(data = dat, aes(x = F_mass)) +
   labs(x = "Female Mass(g)") +
-  geom_histogram(fill = "blue") #This fills in the color as blue. 
-  scale_x_log10() + # Same as question 3.Just changes the scale.  
+  geom_histogram(fill = "blue") + #This fills in the color as blue. 
+  scale_x_log10() # Same as question 3.Just changes the scale.  
   
     
 ggplot(data = dat, aes(x = F_mass)) + #female mass is the normal graph
@@ -33,7 +33,12 @@ ggplot(data = dat, aes(x = F_mass)) +
   geom_histogram(fill = "blue", alpha = 0.3) +
   geom_histogram(aes(x = M_mass), alpha = 0.3) +
   scale_x_log10() +
-  labs(x = "Female Mass(g)") +
+  labs(x = "Mass(g)") +
   facet_wrap(~ Family) #Same code as above but now you facet wrap based on family to sort things out.
   
-
+ggplot(data = dat, aes(x = F_wing)) +
+  geom_histogram(fill = "blue", alpha = 0.3) +
+  geom_histogram(aes(x = M_wing), alpha = 0.3) +
+  scale_x_log10() +
+  labs(x = "Wing Length") + 
+  facet_wrap(~ Family) 
